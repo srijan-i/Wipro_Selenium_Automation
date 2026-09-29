@@ -1,66 +1,74 @@
-# Wipro Selenium Automation
+# 🧪 Wipro Selenium Automation
 
-Coursework, capstone project, and certifications completed as part of the
-**Wipro Selenium Python Automation** program — covering Selenium WebDriver,
-unit testing frameworks, BDD, REST API automation, and Robot Framework.
+**From clicking buttons in a browser to validating APIs with a full BDD framework.**
 
-## Repository Structure
+*A complete record of a test automation learning journey — labs, a capstone project, and certifications.*
+
+`Python` · `Selenium WebDriver` · `unittest` · `PyTest` · `Behave (BDD)` · `Robot Framework` · `Requests` · `JSON Schema` · `Allure`
+
+---
+
+## 🗺️ The Journey
+
+This repo is organized the way the program was actually learned — start at the
+UI, work down to test architecture, then out to APIs:
 
 ```
-Wipro_Selenium_Automation/
-├── 1_Lab_Workbook/           # Module-wise lab experiments and assignments
-│   ├── M1_Selenium_Automation/
-│   ├── M2_Unit_Test_Frameworks/
-│   ├── M3_Python_BDD_Restful_Automation/
-│   └── M4_Robot_Framework/
-├── 2_Capstone_Project/       # Final project: API automation framework
-│   ├── Project_Report/
-│   └── api-automation-framework/
-└── 3_Certificates/           # Program completion certificates
+   UI Automation  ──▶  Test Frameworks  ──▶  BDD + APIs  ──▶  Robot Framework  ──▶  Capstone
+     (M1)                (M2)                 (M3)              (M4)          (real framework)
 ```
 
-## 1. Lab Workbook
+| | |
+|---|---|
+| 🖱️ | **Started** with raw Selenium — locators, waits, alerts, frames |
+| 🧱 | **Structured** it — unittest, PyTest, Page Object Model |
+| 🥒 | **Made it readable** — Behave BDD, `Given/When/Then`, REST calls |
+| 🤖 | **Went keyword-driven** — Robot Framework |
+| 🚀 | **Shipped it** — a full API automation framework with schema validation and Allure reports |
 
-Module-wise lab experiments and assignments, each with a problem statement,
-objective, source code, output screenshots, and observations.
+---
 
-| Module | Topics | Assignments |
-|---|---|---|
-| **M1 — Selenium Automation** | WebDriver setup, locators, XPath/CSS selectors, navigation, alerts, frames/windows, mouse & keyboard actions, web tables, waits, screenshots, exception handling, JS execution | 6 |
-| **M2 — Unit Test Frameworks** | `unittest`, PyTest, Page Object Model (POM) | 3 |
-| **M3 — Python BDD & REST Automation** | Python HTTP libraries, API automation, HTTP response handling, BDD with Behave | 3 |
-| **M4 — Robot Framework** | Setup and running options, keyword-driven and data-driven testing | 2 |
+## 📁 What's Inside
 
-Each assignment folder is self-contained, with its own README, script(s), and
-a `screenshots/` folder showing terminal/output proof of execution.
+### 1️⃣ Lab Workbook — module-wise experiments
 
-## 2. Capstone Project
+Each module folder has numbered assignments; each assignment has its own
+README (problem → objective → approach → result), source code, and a
+`screenshots/` folder as proof of execution.
 
-A **Python API automation framework** built with `requests`, Behave (BDD),
-JSON Schema validation, and Allure reporting, tested against
+| Module | What it covers | # Assignments |
+|:--|:--|:--:|
+| **M1 · Selenium Automation** | WebDriver, locators, XPath/CSS, navigation, alerts, frames & windows, actions, tables, waits, JS execution | 6 |
+| **M2 · Unit Test Frameworks** | `unittest`, PyTest, Page Object Model | 3 |
+| **M3 · BDD & REST Automation** | HTTP clients, API automation, Behave BDD | 3 |
+| **M4 · Robot Framework** | Keyword-driven & data-driven testing | 2 |
+
+### 2️⃣ Capstone Project — the framework that ties it together
+
+**A production-style API test framework** — `requests` + Behave BDD + JSON
+Schema contract validation + Allure reporting — tested against
 [jsonplaceholder.typicode.com](https://jsonplaceholder.typicode.com/) with an
-authentication demo against [automationexercise.com/api](https://automationexercise.com/api_list).
+auth flow demoed against [automationexercise.com](https://automationexercise.com/api_list).
 
-Highlights:
-- Reusable, DRY HTTP client layer (`api_client/`)
-- Plain-English `Given/When/Then` scenarios (`features/`)
-- Contract validation via JSON Schema (`schemas/`)
-- Data-driven tests from JSON/YAML (`test_data/`)
-- Allure reports with request/response bodies attached to each step
-- Environment switching via a single config variable
+```gherkin
+Feature: User Management API
 
-See [`2_Capstone_Project/api-automation-framework/README.md`](2_Capstone_Project/api-automation-framework/README.md)
-for full setup and run instructions, and `Project_Report/` for the written
-project report.
+  Scenario: Fetch a single user
+    Given the API is available
+    When I request user with id 2
+    Then the response status should be 200
+    And the response should match the "user" schema
+```
 
-## 3. Certificates
+- 🔁 Reusable HTTP client layer, DRY by design
+- 📐 Schema validation — checks response *shape*, not just status codes
+- 📊 Allure reports with full request/response payloads per step
+- 🗂️ Data-driven from JSON/YAML — no hardcoded test data
+- 🌍 One env var flips between dev/staging/prod
 
-Completion certificates issued for the program, included as PDFs.
+→ Full setup & run instructions: [`api-automation-framework/README.md`](2_Capstone_Project/api-automation-framework/README.md)
+→ Write-up: [`Project_Report/`](2_Capstone_Project/Project_Report)
 
-## Tech Stack
+### 3️⃣ Certificates
 
-Python · Selenium WebDriver · unittest · PyTest · Behave (BDD) · Robot Framework · Requests · JSON Schema · Allure
-
-## Author
-
-**Shivraj** — [ShivrajCodes](https://github.com/ShivrajCodes)
+Program completion certificates, included as PDFs.
